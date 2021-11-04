@@ -1,0 +1,19 @@
+services:
+    redis:
+        container_name: "redis11"
+        image: "redis:alpine"
+        ports: 
+          - "6379:6379"
+        
+    nginx:
+        image: nginx:alpine
+        container_name: webserver
+        ports: 
+          - "8080:80"
+        volumes:
+          - "/home/nuria/Documentos/html:/usr/share/nginx/html"
+        environment:
+          - NGIX_PORT="80"
+
+
+
